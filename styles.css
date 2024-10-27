@@ -1,0 +1,344 @@
+  * {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  .app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .header {
+    background-color: #ffda00;
+    color: #000;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+  }
+  .logo {
+    max-width: 150px;
+    height: auto;
+  }
+  .language-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .language-buttons button {
+    background-color: #ffda00;
+    border: none;
+    color: #000;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .language-buttons button:hover {
+    background-color: #e5c400;
+  }
+  .balance {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .balance-amount {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+  }
+  .action-btn {
+    background-color: #ffda00;
+    color: #000;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .action-btn:hover {
+    background-color: #e5c400;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .action-btn i {
+    margin-right: 10px;
+  }
+  .nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+  }
+  .nav-item {
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .nav-item:hover {
+    color: #ffda00;
+  }
+  .nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .login-container, .signup-container, .transfer-container, .profile-container {
+    padding: 20px;
+    text-align: center;
+  }
+  input[type="text"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
+    border-color: #ffda00;
+    outline: none;
+  }
+  .back-btn {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .loading-spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #ffda00;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .profile-container {
+    padding: 20px;
+    text-align: center;
+  }
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  .profile-info {
+    text-align: left;
+    margin: 20px 0;
+  }
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffda00;
+    color: #000;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: none;
+  }
+  .carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .carousel-control.prev {
+    left: 10px;
+  }
+  .carousel-control.next {
+    right: 10px;
+  }
+
+/* Styles pour la modal */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000; /* Augmenté pour s'assurer qu'il est au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Un peu plus sombre pour un meilleur contraste */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    transition: opacity 0.3s ease; /* Animation de transition pour l'apparition */
+}
+
+.modal-content {
+    background-color: #fff; /* Couleur de fond blanc */
+    border-radius: 8px; /* Bords arrondis */
+    margin: 20px; /* Marge autour de la modal */
+    padding: 30px; /* Plus de padding pour un look aéré */
+    border: 1px solid #ccc; /* Bordure légère */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    width: 90%; /* Plus flexible */
+    max-width: 500px; /* Largeur maximale */
+    animation: slideIn 0.3s ease; /* Animation d'apparition */
+}
+
+/* Animation de la modal */
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 30px; /* Taille légèrement plus grande */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease; /* Animation de couleur */
+}
+
+.close:hover,
+.close:focus {
+    color: #e74c3c; /* Couleur rouge vif au survol */
+    text-decoration: none;
+}
+
+/* Styles pour le texte dans la modal */
+.modal-content h2 {
+    margin: 0 0 20px; /* Marge inférieure pour espacer du contenu */
+    color: #333; /* Couleur du texte du titre */
+}
+
+.modal-content input[type="text"] {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding: 10px; /* Ajout de padding pour un bon confort de saisie */
+    border: 1px solid #ccc; /* Bordure légère */
+    border-radius: 4px; /* Bords arrondis */
+    margin-bottom: 20px; /* Marge inférieure pour espacer des éléments */
+    font-size: 16px; /* Taille de police */
+}
+
+/* Bouton de suivi */
+.modal-content button {
+    background-color: #ffda00; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte */
+    border: none; /* Suppression de la bordure par défaut */
+    padding: 10px 20px; /* Padding autour du texte */
+    border-radius: 4px; /* Bords arrondis */
+    cursor: pointer; /* Curseur pointer */
+    font-size: 16px; /* Taille de police */
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+}
+
+.modal-content button:hover {
+    background-color: #2980b9; /* Couleur plus foncée au survol */
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 10000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
